@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Learn Boogie-Woogie and Blues piano — free course</title>
+<meta name="description" content="Free course to learn boogie-woogie and blues piano with both hands, from scratch, at any age. MIDI files plus an app that shows the falling notes.">
+<style>
+  :root{
+    --bg:#f7efe1; --bg2:#fbf7ef; --ink:#241a0c; --ink2:#5c4a2c; --muted:#8a765a;
+    --accent:#b5651d; --accent-d:#8f4e13; --accent2:#2e6b4f; --line:#e6d8bd; --card:#fffdf8;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#17120b; --bg2:#1f1810; --ink:#f3e9d8; --ink2:#cdb497; --muted:#9a865f;
+           --accent:#e08a3c; --accent-d:#c9742a; --accent2:#5bbf93;
+           --line:#3a2e1d; --card:#221a10; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+       font:18px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif}
+  .wrap{max-width:900px;margin:0 auto;padding:0 22px}
+  header.hero{background:linear-gradient(160deg,var(--accent) 0%,var(--accent-d) 100%);color:#fff;
+    padding:64px 0 56px;text-align:center}
+  header.hero .wrap{padding:0 22px}
+  .lang{text-align:right;margin-bottom:10px;font-size:.95rem}
+  .lang a{color:#fff;text-decoration:none;opacity:.8;font-weight:700;padding:0 5px}
+  .lang a.on{opacity:1;text-decoration:underline}
+  .kbd{font-size:2.6rem;letter-spacing:3px;margin-bottom:8px;opacity:.9}
+  h1{font-size:2.5rem;line-height:1.12;margin:.1em 0 .25em;font-weight:800;letter-spacing:-.01em}
+  .lead{font-size:1.3rem;opacity:.95;max-width:620px;margin:0 auto 28px}
+  .cta{display:inline-block;background:#fff;color:var(--accent-d);font-weight:800;font-size:1.2rem;
+    text-decoration:none;padding:16px 34px;border-radius:40px;box-shadow:0 8px 22px rgba(0,0,0,.18);
+    transition:transform .12s}
+  .cta:hover{transform:translateY(-2px)}
+  .cta small{display:block;font-weight:600;font-size:.8rem;opacity:.8;margin-top:2px}
+  section{padding:46px 0;border-bottom:1px solid var(--line)}
+  h2{font-size:1.7rem;margin:0 0 6px;color:var(--accent)}
+  p{margin:12px 0}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-top:22px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+  .card .n{font-size:2.1rem;font-weight:800;color:var(--accent);line-height:1}
+  .card h3{margin:.4em 0 .2em;font-size:1.15rem}
+  .card p{margin:6px 0 0;color:var(--ink2);font-size:.98rem}
+  ul.clean{list-style:none;padding:0;margin:18px 0}
+  ul.clean li{padding:10px 0 10px 34px;position:relative;border-bottom:1px solid var(--line)}
+  ul.clean li::before{content:"\266A";position:absolute;left:0;color:var(--accent);font-size:1.2rem}
+  .apps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:18px}
+  .app{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
+  .app b{color:var(--ink)} .app span{display:block;color:var(--muted);font-size:.9rem;margin-top:4px}
+  .free{color:var(--accent2);font-weight:700}
+  .center{text-align:center}
+  .download2{text-align:center;padding:52px 0}
+  .download2 .cta{background:var(--accent);color:#fff}
+  .donate{background:var(--bg2);text-align:center;padding:52px 0;border-bottom:1px solid var(--line)}
+  .donate .coffee{font-size:2.6rem;margin-bottom:4px}
+  .donate-btn{background:var(--accent2);color:#fff;box-shadow:0 8px 22px rgba(46,107,79,.28)}
+  footer{padding:34px 0 60px;color:var(--muted);font-size:.9rem;text-align:center}
+  .note{background:var(--bg2);border-left:4px solid var(--accent2);padding:14px 18px;border-radius:0 10px 10px 0;margin:18px 0;color:var(--ink2);font-size:.96rem}
+  .req{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px 16px;margin-top:20px}
+  .req label{display:flex;align-items:center;gap:9px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:11px 13px;cursor:pointer}
+  .req input[type=checkbox]{width:18px;height:18px;accent-color:var(--accent);flex:none}
+  .req .full{grid-column:1/-1}
+  .req input[type=text],.req input[type=email]{width:100%;padding:11px 13px;border:1px solid var(--line);border-radius:10px;font:inherit;background:var(--card);color:var(--ink)}
+  .req button{grid-column:1/-1;justify-self:start;background:var(--accent);color:#fff;border:0;font-weight:800;font-size:1.05rem;padding:14px 30px;border-radius:40px;cursor:pointer;margin-top:4px}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="lang"><a href="index.html">IT</a><a class="on" href="en.html">EN</a></div>
+    <div class="kbd">&#9612;&#9612;&#9612;&#9612;&#9612;&#9612;&#9612;</div>
+    <h1>Learn Boogie-Woogie<br>and Blues piano</h1>
+    <p class="lead">A free course to play with both hands, starting from scratch. With files to
+    play and an app that shows the notes falling toward the keyboard.</p>
+    <a class="cta" href="Corso_Piano_Boogie_Blues.zip">Download the course &mdash; free
+      <small>40 exercises &middot; MIDI + audio &middot; 15 MB</small></a>
+  </div>
+</header>
+<section style="background:var(--bg2);text-align:center;padding:40px 0;border-bottom:1px solid var(--line)">
+  <div class="wrap"><h2 style="color:var(--accent)">Watch the preview</h2>
+    <video controls playsinline preload="metadata" style="width:300px;max-width:85%;border-radius:18px;box-shadow:0 10px 30px rgba(0,0,0,.25)">
+      <source src="reel_en.mp4" type="video/mp4"></video>
+  </div></section>
+
+
+<section>
+  <div class="wrap">
+    <h2>Who it's for</h2>
+    <p>For anyone who wants to learn boogie-woogie and blues piano <b>from scratch</b>, calmly and
+    without complicated sheet music &mdash; <b>at any age</b>. If you have a keyboard (even a simple
+    one) and a computer, you have everything you need. The exercises start from the very first touch
+    and lead you, step by step, to playing a whole tune.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>What's inside</h2>
+    <div class="grid">
+      <div class="card"><div class="n">24</div><h3>Boogie-Woogie exercises</h3>
+        <p>From the basic touch to the classic bass, the ornaments, up to a complete piece.</p></div>
+      <div class="card"><div class="n">8</div><h3>Slow Blues exercises</h3>
+        <p>The triplet feel, the shuffle, the licks and the turnaround.</p></div>
+      <div class="card"><div class="n">8</div><h3>Fast Blues Shuffle exercises</h3>
+        <p>The up-tempo shuffle, jump-blues style, at increasing speeds.</p></div>
+    </div>
+    <p class="center" style="margin-top:22px;color:var(--ink2)">Every exercise has the two hands
+    already on separate tracks, a file to play and an <b>audio preview</b> to hear how it sounds.
+    Plus a guide and a step-by-step learning path.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>How it works</h2>
+    <ul class="clean">
+      <li>Download the course and one of the apps suggested below.</li>
+      <li>Open an exercise: you see the notes fall, one row for the right hand and one for the left.</li>
+      <li>With <b>wait mode</b>, the notes wait for you: you never fall behind.</li>
+      <li>Practise one hand at a time, slowly. Speed comes on its own.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Which app to play with</h2>
+    <p>The course files are in <b>MIDI</b> format. You need an app that shows them as
+    &ldquo;falling notes&rdquo;. Pick the one you prefer:</p>
+    <div class="apps">
+      <div class="app"><b>Synthesia</b><span>Recommended. Download (PC, Mac, tablet). The one the
+        course is built for: separate hands and wait mode.</span></div>
+      <div class="app"><b>Neothesia</b><span class="free">Free</span><span>Download, PC/Mac/Linux.
+        Falling notes.</span></div>
+      <div class="app"><b>PianoFall / Midiano</b><span class="free">Free</span><span>In the browser,
+        nothing to install.</span></div>
+      <div class="app"><b>MuseScore 4</b><span class="free">Free</span><span>Plays the files and
+        shows the score.</span></div>
+    </div>
+    <p class="note">App prices and versions may change: always check each app's official website.</p>
+  </div>
+</section>
+
+<div class="download2">
+  <div class="wrap">
+    <h2 style="border:0">Ready to start?</h2>
+    <p style="color:var(--ink2);margin-bottom:24px">It's free. One key at a time.</p>
+    <a class="cta" href="Corso_Piano_Boogie_Blues.zip">Download the course &mdash; free
+      <small>40 exercises &middot; MIDI + audio &middot; 15 MB</small></a>
+  </div>
+</div>
+
+<section id="request">
+  <div class="wrap">
+    <h2>Request more courses</h2>
+    <p>Which style would you like to learn? Pick one or more and send: you'll help me choose the
+    next free courses.</p>
+    <form id="reqForm" class="req" action="https://formspree.io/f/mjyknlre" method="POST">
+      <input type="hidden" name="_subject" value="New course request — Corso Piano Boogie">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <label><input type="checkbox" name="genere" value="Jazz"> Jazz</label>
+      <label><input type="checkbox" name="genere" value="Ragtime"> Ragtime</label>
+      <label><input type="checkbox" name="genere" value="Gospel / Soul"> Gospel / Soul</label>
+      <label><input type="checkbox" name="genere" value="Rock'n'Roll"> Rock'n'Roll</label>
+      <label><input type="checkbox" name="genere" value="Classical"> Classical</label>
+      <label><input type="checkbox" name="genere" value="Pop / modern"> Pop / modern</label>
+      <label><input type="checkbox" name="genere" value="Film scores"> Film scores</label>
+      <label><input type="checkbox" name="genere" value="Christmas songs"> Christmas songs</label>
+      <label><input type="checkbox" name="genere" value="Tango / Latin"> Tango / Latin</label>
+      <div class="full"><input type="text" name="altro_genere" id="reqAltro" placeholder="Other style (type it here)..."></div>
+      <div class="full"><input type="email" name="email" id="reqEmail" placeholder="Your email (optional, to be notified when it's out)"></div>
+      <button type="submit">Send request &#9834;</button>
+    </form>
+    <p id="reqOk" style="display:none;color:var(--accent2);font-weight:700;margin-top:16px">Thanks! Your request has been sent. 🎹</p>
+  </div>
+</section>
+
+<section class="donate">
+  <div class="wrap center">
+    <div class="coffee">&#9749;</div>
+    <h2 style="border:0">The course is and stays free</h2>
+    <p style="color:var(--ink2);max-width:560px;margin:8px auto 22px">If it helped you and you feel
+    like it, you can buy me a coffee. It's only a thought, never an obligation &mdash; one key at a
+    time.</p>
+    <a class="cta donate-btn" href="https://ko-fi.com/corsopianoboogie" target="_blank" rel="noopener">
+      Buy me a coffee &#9834;</a>
+    <p style="color:var(--muted);font-size:.85rem;margin-top:16px">Donations handled securely via
+    <b>Ko-fi</b> &mdash; no account needed to donate.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Free piano course &mdash; Boogie-Woogie &amp; Blues. The exercises are original material,
+    free to use and share for learning.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var f=document.getElementById('reqForm'); if(!f) return;
+  f.addEventListener('submit', async function(e){
+    e.preventDefault();
+    var checked=f.querySelectorAll('input[type=checkbox]:checked').length;
+    var altro=(document.getElementById('reqAltro').value||'').trim();
+    if(!checked && !altro){ alert('Please select at least one style (or type one in "Other").'); return; }
+    try{
+      var res=await fetch(f.action,{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'}});
+      if(res.ok){ f.style.display='none'; document.getElementById('reqOk').style.display='block'; }
+      else{ alert('Could not send, please try again later.'); }
+    }catch(err){ alert('Could not send: please check your connection.'); }
+  });
+})();
+</script>
+
+</body>
+</html>
